@@ -8,10 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.droidfoodapp.R
-import com.example.droidfoodapp.domain.CategoryDomain
-import com.example.droidfoodapp.domain.RecommendedDomain
+import com.example.droidfoodapp.domain.FoodDomain
 
-class RecommendedAdapter(private val recommendedDomain: ArrayList<RecommendedDomain>)
+class RecommendedAdapter(private val recommendedDomain: ArrayList<FoodDomain>)
     : RecyclerView.Adapter<RecommendedAdapter.ViewHolder>(){
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.title)

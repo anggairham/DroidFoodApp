@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.droidfoodapp.adapter.CategoryAdapter
 import com.example.droidfoodapp.adapter.RecommendedAdapter
 import com.example.droidfoodapp.domain.CategoryDomain
-import com.example.droidfoodapp.domain.RecommendedDomain
+import com.example.droidfoodapp.domain.FoodDomain
 
 class HomeActivity : AppCompatActivity() {
     private var adapter: RecyclerView.Adapter<*>? = null
@@ -26,10 +26,10 @@ class HomeActivity : AppCompatActivity() {
         recyclerViewRecommendedList = findViewById(R.id.view2)
         recyclerViewRecommendedList.layoutManager = linearLayoutManager
 
-        val dataList = ArrayList<RecommendedDomain>()
-        dataList.add(RecommendedDomain("Pepperoni Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
-        dataList.add(RecommendedDomain("Cheese Burger","burger","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",15.20,44,18,1500));
-        dataList.add(RecommendedDomain("Vegetable Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
+        val dataList = ArrayList<FoodDomain>()
+        dataList.add(FoodDomain("Pepperoni Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
+        dataList.add(FoodDomain("Cheese Burger","burger","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",15.20,44,18,1500));
+        dataList.add(FoodDomain("Vegetable Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
 
         adapter2 = RecommendedAdapter(dataList)
         recyclerViewRecommendedList.adapter = adapter2

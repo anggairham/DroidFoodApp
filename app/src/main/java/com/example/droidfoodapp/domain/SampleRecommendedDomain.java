@@ -15,7 +15,6 @@ public class SampleRecommendedDomain {
         this.pic = pic;
         this.description = description;
         this.fee = fee;
-        this.numberInCart = numberInCart;
         this.star = star;
         this.time = time;
         this.calories = calories;
