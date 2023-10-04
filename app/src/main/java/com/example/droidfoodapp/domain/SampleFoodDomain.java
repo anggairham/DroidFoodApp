@@ -10,7 +10,7 @@ public class SampleFoodDomain {
     private int time;
     private int calories;
 
-    public SampleFoodDomain(String title, String pic, String description, Double fee, int numberInCart, int star, int time, int calories) {
+    public SampleFoodDomain(String title, String pic, String description, Double fee, int star, int time, int calories) {
         this.title = title;
         this.pic = pic;
         this.description = description;

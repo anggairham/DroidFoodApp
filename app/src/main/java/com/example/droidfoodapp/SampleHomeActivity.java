@@ -30,10 +30,13 @@ public class SampleHomeActivity extends AppCompatActivity {
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
         ArrayList<SampleFoodDomain> dataList = new ArrayList<>();
-//        dataList.add(new SampleFoodDomain("Pizza","cat_1"));
+        dataList.add(new SampleFoodDomain("Pepperoni Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
+        dataList.add(new SampleFoodDomain("Cheese Burger","burger","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",15.20,44,18,1500));
+        dataList.add(new SampleFoodDomain("Vegetable Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
 
-//        adapter= new SampleCategoryAdapter(dataList);
-//        recyclerViewPopularList.setAdapter(adapter);
+
+//        adapter2= new SampleCategoryAdapter(dataList);
+//        recyclerViewPopularList.setAdapter(adapter2);
     }
 
     private void recyclerViewCategory() {
