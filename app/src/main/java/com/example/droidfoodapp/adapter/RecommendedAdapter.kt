@@ -17,6 +17,7 @@ class RecommendedAdapter(private val recommendedDomain: ArrayList<RecommendedDom
         val title: TextView = itemView.findViewById(R.id.title)
         val fee: TextView = itemView.findViewById(R.id.fee)
         val pic: ImageView = itemView.findViewById(R.id.pic)
+        val addBtn: ImageView = itemView.findViewById(R.id.addBtn)
     }
 
     override fun onCreateViewHolder(

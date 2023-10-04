@@ -52,14 +52,12 @@ public class SampleRecommendedAdapter extends RecyclerView.Adapter<SampleRecomme
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView title,fee;
         ImageView pic,addBtn;
-        ConstraintLayout mainLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.title);
             fee=itemView.findViewById(R.id.fee);
             pic=itemView.findViewById(R.id.pic);
             addBtn=itemView.findViewById(R.id.addBtn);
-            mainLayout=itemView.findViewById(R.id.mainLayout);
         }
     }
 }
