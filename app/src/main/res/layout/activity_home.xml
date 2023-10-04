@@ -109,7 +109,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/orang_background"
+                        android:background="@drawable/orange_background"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/textView10"
                         app:layout_constraintHorizontal_bias="0.794"
@@ -190,7 +190,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/view1" />
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/taxTxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="32dp"
@@ -256,7 +256,7 @@
                         android:id="@+id/textView21"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Home"
+                        android:text="Cart"
                         android:textAlignment="center"
                         android:textColor="#676767"
                         android:textSize="12sp" />

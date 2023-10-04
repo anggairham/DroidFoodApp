@@ -45,7 +45,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/totalFeeTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -69,8 +69,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintStart_toStartOf="@+id/totalFeeTxt"
+        app:layout_constraintTop_toBottomOf="@+id/totalFeeTxt" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/btn_start"
@@ -84,7 +84,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/deliveryTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Get Started"
