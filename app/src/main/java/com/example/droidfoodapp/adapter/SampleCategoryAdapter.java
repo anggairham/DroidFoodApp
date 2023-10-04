@@ -1,4 +1,4 @@
-package com.example.droidfoodapp.Adapter;
+package com.example.droidfoodapp.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

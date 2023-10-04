@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.droidfoodapp.Adapter.SampleCategoryAdapter;
-import com.example.droidfoodapp.Adapter.SampleRecommendedAdapter;
+import com.example.droidfoodapp.adapter.SampleCategoryAdapter;
+import com.example.droidfoodapp.adapter.SampleRecommendedAdapter;
 import com.example.droidfoodapp.domain.SampleCategoryDomain;
 import com.example.droidfoodapp.domain.SampleRecommendedDomain;
 

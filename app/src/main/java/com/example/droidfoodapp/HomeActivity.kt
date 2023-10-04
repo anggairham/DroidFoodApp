@@ -21,11 +21,13 @@ class HomeActivity : AppCompatActivity() {
         recyclerViewCategoryList = findViewById(R.id.view1)
         recyclerViewCategoryList.layoutManager = linearLayoutManager
 
-        val categoryList = ArrayList<CategoryDomain>()
-        categoryList.add(CategoryDomain("Pizza", "cat_1"))
-        categoryList.add(CategoryDomain("Pizza", "cat_2"))
-        categoryList.add(CategoryDomain("Pizza", "cat_3"))
-        categoryList.add(CategoryDomain("Pizza", "cat_4"))
-        categoryList.add(CategoryDomain("Pizza", "cat_5"))
+        val dataList = ArrayList<CategoryDomain>()
+        dataList.add(CategoryDomain("Pizza", "cat_1"))
+        dataList.add(CategoryDomain("Pizza", "cat_2"))
+        dataList.add(CategoryDomain("Pizza", "cat_3"))
+        dataList.add(CategoryDomain("Pizza", "cat_4"))
+        dataList.add(CategoryDomain("Pizza", "cat_5"))
+
+//        adapter = CategoryAdapter(dataList)
     }
 }
