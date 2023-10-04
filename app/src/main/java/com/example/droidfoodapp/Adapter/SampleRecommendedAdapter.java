@@ -12,15 +12,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.droidfoodapp.R;
-import com.example.droidfoodapp.domain.SampleFoodDomain;
+import com.example.droidfoodapp.domain.SampleRecommendedDomain;
 
 import java.util.ArrayList;
 
 public class SampleRecommendedAdapter extends RecyclerView.Adapter<SampleRecommendedAdapter.ViewHolder> {
-    ArrayList<SampleFoodDomain> foodDomains;
+    ArrayList<SampleRecommendedDomain> recommendedDomains;
 
-    public SampleRecommendedAdapter(ArrayList<SampleFoodDomain> foodDomains) {
-        this.foodDomains = foodDomains;
+    public SampleRecommendedAdapter(ArrayList<SampleRecommendedDomain> recommendedDomains) {
+        this.recommendedDomains = recommendedDomains;
     }
 
     @NonNull
@@ -33,51 +33,32 @@ public class SampleRecommendedAdapter extends RecyclerView.Adapter<SampleRecomme
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.categoryName.setText(foodDomains.get(position).getTitle());
-        String picUrl="";
-        switch (position){
-            case 0:{
-                picUrl="cat_1";
-                break;
-            }
-            case 1:{
-                picUrl="cat_2";
-                break;
-            }
-            case 2:{
-                picUrl="cat_3";
-                break;
-            }
-            case 3:{
-                picUrl="cat_4";
-                break;
-            }
-            case 4:{
-                picUrl="cat_5";
-                break;
-            }
-        }
+        holder.title.setText(recommendedDomains.get(position).getTitle());
+        holder.fee.setText(String.valueOf(recommendedDomains.get(position).getFee()));
+
         int drawableResourceId=holder.itemView.getContext().getResources()
-                .getIdentifier(picUrl,"drawable",
+                .getIdentifier(recommendedDomains.get(position).getPic(),"drawable",
                         holder.itemView.getContext().getPackageName());
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
-                .into(holder.categoryPic);
+                .into(holder.pic);
     }
 
     @Override
     public int getItemCount() {
-        return foodDomains.size();
+        return recommendedDomains.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView categoryName;
-        ImageView categoryPic;
+        TextView title,fee;
+        ImageView pic,addBtn;
         ConstraintLayout mainLayout;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            categoryName=itemView.findViewById(R.id.categoryName);
-            categoryPic=itemView.findViewById(R.id.categoryPic);
+            title=itemView.findViewById(R.id.title);
+            fee=itemView.findViewById(R.id.fee);
+            pic=itemView.findViewById(R.id.pic);
+            addBtn=itemView.findViewById(R.id.addBtn);
             mainLayout=itemView.findViewById(R.id.mainLayout);
         }
     }
