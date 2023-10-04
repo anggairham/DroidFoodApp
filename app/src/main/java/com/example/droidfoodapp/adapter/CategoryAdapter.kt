@@ -8,25 +8,24 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.droidfoodapp.R
-import com.example.droidfoodapp.domain.SampleCategoryDomain
+import com.example.droidfoodapp.domain.CategoryDomain
 
-class SampleCategoryAdapter(private val categoryDomains: ArrayList<SampleCategoryDomain>) :
-    RecyclerView.Adapter<SampleCategoryAdapter.ViewHolder>() {
-
+class CategoryAdapter(private val categoryDomain: ArrayList<CategoryDomain>)
+    : RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val categoryName: TextView = itemView.findViewById(R.id.categoryName)
         val categoryPic: ImageView = itemView.findViewById(R.id.categoryPic)
         val mainLayout: View = itemView.findViewById(R.id.mainLayout)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryAdapter.ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.viewholder_category, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val category = categoryDomains[position]
+    override fun onBindViewHolder(holder: CategoryAdapter.ViewHolder, position: Int) {
+        val category = categoryDomain[position]
         holder.categoryName.text = category.title
         val picUrl = when (position) {
             0 -> "cat_1"
@@ -45,6 +44,6 @@ class SampleCategoryAdapter(private val categoryDomains: ArrayList<SampleCategor
     }
 
     override fun getItemCount(): Int {
-        return categoryDomains.size
+        return categoryDomain.size
     }
 }
