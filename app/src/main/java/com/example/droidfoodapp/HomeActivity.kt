@@ -14,9 +14,9 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
-        recyclerViewCategoryList()
+        recyclerViewCategory()
     }
-    private fun recyclerViewCategoryList() {
+    private fun recyclerViewCategory() {
         val linearLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recyclerViewCategoryList = findViewById(R.id.view1)
         recyclerViewCategoryList.layoutManager = linearLayoutManager
