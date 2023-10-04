@@ -13,6 +13,9 @@
         android:theme="@style/Theme.DroidFoodApp"
         tools:targetApi="31">
         <activity
+            android:name=".SampleHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
