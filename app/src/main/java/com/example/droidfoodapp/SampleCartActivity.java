@@ -33,6 +33,7 @@ public class SampleCartActivity extends AppCompatActivity {
         initView();
         initList();
         bottomNavigation();
+        calculateCart();
     }
     private void bottomNavigation() {
         LinearLayout homeBtn= findViewById(R.id.homeBtn);

@@ -72,9 +72,9 @@ public class SampleCartAdapter extends RecyclerView.Adapter<SampleCartAdapter.Vi
         TextView totalEachItem,num;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            title=itemView.findViewById(R.id.title);
+            title=itemView.findViewById(R.id.titleTxt);
             pic=itemView.findViewById(R.id.pic);
-            feeEachItem=itemView.findViewById(R.id.fee);
+            feeEachItem=itemView.findViewById(R.id.feeEachItem);
             totalEachItem=itemView.findViewById(R.id.totalEachItem);
             plusItem=itemView.findViewById(R.id.plusCartBtn);
             minusItem=itemView.findViewById(R.id.minusCartBtn);

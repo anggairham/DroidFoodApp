@@ -42,12 +42,13 @@ private ManagementCart managementCart;
         caloryTxt.setText(object.getCalories()+ "calories");
         starTxt.setText(object.getStar());
         timeTxt.setText(object.getTime() + "minutes");
+        totalPriceTxt.setText("$"+Math.round(numberOrder * object.getFee()));
         plusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 numberOrder = numberOrder + 1;
                 numberOrderTxt.setText(String.valueOf(numberOrder));
-                totalPriceTxt.setText(String.valueOf(numberOrder * object.getFee()));
+                totalPriceTxt.setText("$"+Math.round(numberOrder * object.getFee()));
             }
         });
         minusBtn.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +58,7 @@ private ManagementCart managementCart;
                     numberOrder = numberOrder - 1;
                 }
                 numberOrderTxt.setText(String.valueOf(numberOrder));
-                totalPriceTxt.setText(String.valueOf(numberOrder * object.getFee()));
+                totalPriceTxt.setText("$"+Math.round(numberOrder * object.getFee()));
             }
         });
         addToCartBtn.setOnClickListener(new View.OnClickListener() {
