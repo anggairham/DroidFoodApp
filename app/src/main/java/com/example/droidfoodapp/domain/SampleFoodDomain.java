@@ -1,6 +1,6 @@
 package com.example.droidfoodapp.domain;
 
-public class SampleRecommendedDomain {
+public class SampleFoodDomain {
     private String title;
     private  String pic;
     private String description;
@@ -10,7 +10,7 @@ public class SampleRecommendedDomain {
     private int time;
     private int calories;
 
-    public SampleRecommendedDomain(String title, String pic, String description, Double fee, int star, int time, int calories) {
+    public SampleFoodDomain(String title, String pic, String description, Double fee, int star, int time, int calories) {
         this.title = title;
         this.pic = pic;
         this.description = description;

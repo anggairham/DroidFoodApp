@@ -9,7 +9,7 @@ import android.os.Bundle;
 import com.example.droidfoodapp.adapter.SampleCategoryAdapter;
 import com.example.droidfoodapp.adapter.SampleRecommendedAdapter;
 import com.example.droidfoodapp.domain.SampleCategoryDomain;
-import com.example.droidfoodapp.domain.SampleRecommendedDomain;
+import com.example.droidfoodapp.domain.SampleFoodDomain;
 
 import java.util.ArrayList;
 
@@ -30,10 +30,10 @@ public class SampleHomeActivity extends AppCompatActivity {
         recyclerViewPopularList = findViewById(R.id.view2);
         recyclerViewPopularList.setLayoutManager(linearLayoutManager);
 
-        ArrayList<SampleRecommendedDomain> dataList = new ArrayList<>();
-        dataList.add(new SampleRecommendedDomain("Pepperoni Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
-        dataList.add(new SampleRecommendedDomain("Cheese Burger","burger","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",15.20,44,18,1500));
-        dataList.add(new SampleRecommendedDomain("Vegetable Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
+        ArrayList<SampleFoodDomain> dataList = new ArrayList<>();
+        dataList.add(new SampleFoodDomain("Pepperoni Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
+        dataList.add(new SampleFoodDomain("Cheese Burger","burger","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",15.20,44,18,1500));
+        dataList.add(new SampleFoodDomain("Vegetable Pizza","pizza1","slices pepperoni, mozzarella cheese, fresh oregano, ground black pepper, pizza sauce",13.0,5,20,1000));
 
 
         adapter2= new SampleRecommendedAdapter(dataList);

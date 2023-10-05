@@ -7,19 +7,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.droidfoodapp.R;
-import com.example.droidfoodapp.domain.SampleRecommendedDomain;
+import com.example.droidfoodapp.domain.SampleFoodDomain;
 
 import java.util.ArrayList;
 
 public class SampleRecommendedAdapter extends RecyclerView.Adapter<SampleRecommendedAdapter.ViewHolder> {
-    ArrayList<SampleRecommendedDomain> recommendedDomains;
+    ArrayList<SampleFoodDomain> recommendedDomains;
 
-    public SampleRecommendedAdapter(ArrayList<SampleRecommendedDomain> recommendedDomains) {
+    public SampleRecommendedAdapter(ArrayList<SampleFoodDomain> recommendedDomains) {
         this.recommendedDomains = recommendedDomains;
     }
 

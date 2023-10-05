@@ -12,18 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.droidfoodapp.R;
-import com.example.droidfoodapp.domain.SampleRecommendedDomain;
+import com.example.droidfoodapp.domain.FoodDomain;
 import com.example.droidfoodapp.helper.ChangeNumberItemListener;
 import com.example.droidfoodapp.helper.ManagementCart;
 
 import java.util.ArrayList;
 
 public class SampleCartAdapter extends RecyclerView.Adapter<SampleCartAdapter.ViewHolder> {
-    ArrayList<SampleRecommendedDomain> listFoodSelected;
+    ArrayList<FoodDomain> listFoodSelected;
     private ManagementCart managementCart;
     ChangeNumberItemListener changeNumberItemListener;
 
-    public SampleCartAdapter(ArrayList<SampleRecommendedDomain> listFoodSelected, Context context,ChangeNumberItemListener changeNumberItemListener) {
+    public SampleCartAdapter(ArrayList<FoodDomain> listFoodSelected, Context context,ChangeNumberItemListener changeNumberItemListener) {
         this.listFoodSelected = listFoodSelected;
         managementCart=new ManagementCart(context);
         this.changeNumberItemListener = changeNumberItemListener;
@@ -33,14 +33,16 @@ public class SampleCartAdapter extends RecyclerView.Adapter<SampleCartAdapter.Vi
     @Override
     public SampleCartAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.viewholder_recommended,parent,false);
+                .inflate(R.layout.viewholder_cart,parent,false);
         return new ViewHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(listFoodSelected.get(position).getTitle());
-        holder.feeEachItem.setText(String.valueOf(listFoodSelected.get(position).getFee()));
+        holder.feeEachItem.setText("$"+listFoodSelected.get(position).getFee());
+        holder.totalEachItem.setText("$"+Math.round(listFoodSelected.get(position).getNumberInCart() * listFoodSelected.get(position).getFee()));
+        holder.num.setText(String.valueOf(listFoodSelected.get(position).getNumberInCart()));
 
         int drawableResourceId=holder.itemView.getContext().getResources()
                 .getIdentifier(listFoodSelected.get(position).getPic(),"drawable",
@@ -48,6 +50,15 @@ public class SampleCartAdapter extends RecyclerView.Adapter<SampleCartAdapter.Vi
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.pic);
+        holder.plusItem.setOnClickListener(view -> managementCart.plusNumberFood(listFoodSelected, position, () -> {
+            notifyDataSetChanged();
+            changeNumberItemListener.changed();
+        }));
+
+        holder.minusItem.setOnClickListener(view -> managementCart.minusNumberFood(listFoodSelected, position, () -> {
+            notifyDataSetChanged();
+            changeNumberItemListener.changed();
+        }));
     }
 
     @Override
@@ -64,7 +75,10 @@ public class SampleCartAdapter extends RecyclerView.Adapter<SampleCartAdapter.Vi
             title=itemView.findViewById(R.id.title);
             pic=itemView.findViewById(R.id.pic);
             feeEachItem=itemView.findViewById(R.id.fee);
-            totalEachItem=itemView.findViewById(R.id.fee);
+            totalEachItem=itemView.findViewById(R.id.totalEachItem);
+            plusItem=itemView.findViewById(R.id.plusCartBtn);
+            minusItem=itemView.findViewById(R.id.minusCartBtn);
+            num=itemView.findViewById(R.id.numberItemTxt);
         }
     }
 }

@@ -5,9 +5,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.droidfoodapp.adapter.SampleCartAdapter;
+import com.example.droidfoodapp.helper.ChangeNumberItemListener;
 import com.example.droidfoodapp.helper.ManagementCart;
 
 public class SampleCartActivity extends AppCompatActivity {
@@ -32,6 +35,20 @@ public class SampleCartActivity extends AppCompatActivity {
     private void initList() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         recyclerViewList.setLayoutManager(linearLayoutManager);
+        adapter = new SampleCartAdapter(managementCart.getListCart(), this, new ChangeNumberItemListener() {
+            @Override
+            public void changed() {
+                calculateCart();
+            }
+        });
+        recyclerViewList.setAdapter(adapter);
+        if (managementCart.getListCart().isEmpty()){
+            emptyTxt.setVisibility(View.VISIBLE);
+            scrollView.setVisibility(View.GONE);
+        }else{
+            emptyTxt.setVisibility(View.GONE);
+            scrollView.setVisibility(View.VISIBLE);
+        }
     }
 
     private void calculateCart() {
