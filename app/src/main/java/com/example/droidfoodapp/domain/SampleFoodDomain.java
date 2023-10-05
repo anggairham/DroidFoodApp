@@ -1,8 +1,10 @@
 package com.example.droidfoodapp.domain;
 
-public class SampleFoodDomain {
+import java.io.Serializable;
+
+public class SampleFoodDomain implements Serializable {
     private String title;
-    private  String pic;
+    private String pic;
     private String description;
     private Double fee;
     private int numberInCart;

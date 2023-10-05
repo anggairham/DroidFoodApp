@@ -1,5 +1,6 @@
 package com.example.droidfoodapp.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.droidfoodapp.R;
+import com.example.droidfoodapp.SampleDetailActivity;
 import com.example.droidfoodapp.domain.SampleFoodDomain;
 
 import java.util.ArrayList;
@@ -41,6 +43,11 @@ public class SampleRecommendedAdapter extends RecyclerView.Adapter<SampleRecomme
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.pic);
+        holder.addBtn.setOnClickListener(view -> {
+             Intent intent = new Intent(holder.itemView.getContext(), SampleDetailActivity.class);
+             intent.putExtra("object",recommendedDomains.get(position));
+             holder.itemView.getContext().startActivity(intent);
+        });
     }
 
     @Override

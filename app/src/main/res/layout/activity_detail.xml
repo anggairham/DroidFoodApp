@@ -218,7 +218,7 @@
                             app:srcCompat="@drawable/flame" />
 
                         <TextView
-                            android:id="@+id/caloriesTxt"
+                            android:id="@+id/caloryTxt"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -233,7 +233,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/descriptionTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"

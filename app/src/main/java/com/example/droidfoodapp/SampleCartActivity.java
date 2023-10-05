@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -24,12 +26,29 @@ public class SampleCartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sample_cart);
+        setContentView(R.layout.activity_cart);
 
         managementCart = new ManagementCart(this);
         
         initView();
         initList();
+        bottomNavigation();
+    }
+    private void bottomNavigation() {
+        LinearLayout homeBtn= findViewById(R.id.homeBtn);
+        LinearLayout cartBtn=findViewById(R.id.cartBtn);
+        homeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SampleCartActivity.this, SampleHomeActivity.class));
+            }
+        });
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SampleCartActivity.this, SampleCartActivity.class));
+            }
+        });
     }
 
     private void initList() {
