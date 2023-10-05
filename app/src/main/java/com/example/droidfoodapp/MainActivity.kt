@@ -11,8 +11,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val startBtn = findViewById<ConstraintLayout>(R.id.btn_start)
+        val startBtnJava = findViewById<ConstraintLayout>(R.id.btn_start_java)
         startBtn.setOnClickListener {
             val moveIntent = Intent(this@MainActivity,HomeActivity::class.java)
+            startActivity(moveIntent)
+        }
+        startBtnJava.setOnClickListener {
+            val moveIntent = Intent(this@MainActivity,SampleHomeActivity::class.java)
             startActivity(moveIntent)
         }
     }

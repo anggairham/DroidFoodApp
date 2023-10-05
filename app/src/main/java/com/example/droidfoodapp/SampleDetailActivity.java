@@ -8,14 +8,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.droidfoodapp.domain.FoodDomain;
+import com.example.droidfoodapp.domain.SampleFoodDomain;
 import com.example.droidfoodapp.helper.ManagementCart;
 
 public class SampleDetailActivity extends AppCompatActivity {
 private TextView addToCartBtn;
 private  TextView titleTxt,feeTxt,descriptionTxt,numberOrderTxt,totalPriceTxt,starTxt,timeTxt,caloryTxt;
 private ImageView plusBtn,minusBtn,picFood;
-private FoodDomain object;
+private SampleFoodDomain object;
 private  int numberOrder = 1;
 private ManagementCart managementCart;
     @Override
@@ -29,7 +29,7 @@ private ManagementCart managementCart;
     }
 
     private void getBundle() {
-        object=(FoodDomain)getIntent().getSerializableExtra("object");
+        object=(SampleFoodDomain)getIntent().getSerializableExtra("object");
         int drawableResourceId=this.getResources()
                 .getIdentifier(object.getPic(),"drawable",this.getPackageName());
         Glide.with(this)
@@ -38,9 +38,9 @@ private ManagementCart managementCart;
         titleTxt.setText(object.getTitle());
         feeTxt.setText("$"+object.getFee());
         descriptionTxt.setText(object.getDescription());
-        numberOrderTxt.setText(object.getNumberInCart());
+        numberOrderTxt.setText(String.valueOf(numberOrder));
         caloryTxt.setText(object.getCalories()+ "calories");
-        starTxt.setText(object.getStar());
+        starTxt.setText(String.valueOf(object.getStar()) + "");
         timeTxt.setText(object.getTime() + "minutes");
         totalPriceTxt.setText("$"+Math.round(numberOrder * object.getFee()));
         plusBtn.setOnClickListener(new View.OnClickListener() {

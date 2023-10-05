@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/TextView29"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ecebe6"
@@ -153,15 +154,13 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/emptyTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Total"
                         android:textColor="#737373"
                         android:textSize="30sp"
-                        android:textStyle="bold"
-                        android:visibility="gone" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/totalTxt"
@@ -198,7 +197,7 @@
     </ScrollView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/emptyTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your Cart is Empty"

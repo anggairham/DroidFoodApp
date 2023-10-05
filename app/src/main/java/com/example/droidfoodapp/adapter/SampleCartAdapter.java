@@ -12,18 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.droidfoodapp.R;
-import com.example.droidfoodapp.domain.FoodDomain;
+import com.example.droidfoodapp.domain.SampleFoodDomain;
 import com.example.droidfoodapp.helper.ChangeNumberItemListener;
 import com.example.droidfoodapp.helper.ManagementCart;
 
 import java.util.ArrayList;
 
 public class SampleCartAdapter extends RecyclerView.Adapter<SampleCartAdapter.ViewHolder> {
-    ArrayList<FoodDomain> listFoodSelected;
+    ArrayList<SampleFoodDomain> listFoodSelected;
     private ManagementCart managementCart;
     ChangeNumberItemListener changeNumberItemListener;
 
-    public SampleCartAdapter(ArrayList<FoodDomain> listFoodSelected, Context context,ChangeNumberItemListener changeNumberItemListener) {
+    public SampleCartAdapter(ArrayList<SampleFoodDomain> listFoodSelected, Context context, ChangeNumberItemListener changeNumberItemListener) {
         this.listFoodSelected = listFoodSelected;
         managementCart=new ManagementCart(context);
         this.changeNumberItemListener = changeNumberItemListener;

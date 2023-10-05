@@ -7,7 +7,7 @@ public class SampleFoodDomain implements Serializable {
     private String pic;
     private String description;
     private Double fee;
-    private int numberInCart;
+    private int numberInCart = 0;
     private int star;
     private int time;
     private int calories;

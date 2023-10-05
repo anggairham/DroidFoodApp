@@ -35,14 +35,15 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.404"
         app:layout_constraintVertical_weight="0.04"
-        app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="0dp" />
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/totalFeeTxt"
@@ -78,7 +79,7 @@
         android:layout_height="50dp"
         android:background="@drawable/white_button"
         android:elevation="4dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="@+id/textView3"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toBottomOf="@+id/textView3">
@@ -88,6 +89,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Get Started"
+            android:textColor="#ff5e00"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_start_java"
+        android:layout_width="289dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/white_button"
+        android:elevation="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/btn_start"
+        app:layout_constraintStart_toStartOf="@+id/btn_start"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Started JavaA"
             android:textColor="#ff5e00"
             android:textSize="23sp"
             android:textStyle="bold"

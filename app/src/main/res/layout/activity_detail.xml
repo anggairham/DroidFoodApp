@@ -22,10 +22,10 @@
 
             <ImageView
                 android:id="@+id/foodPic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
                 android:layout_margin="24dp"
-                app:srcCompat="@drawable/burger_large" />
+                app:srcCompat="@drawable/pizza3" />
 
             <LinearLayout
                 android:layout_width="match_parent"
